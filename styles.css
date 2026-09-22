@@ -1,0 +1,152 @@
+/* Základní reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Navigace */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 100;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    transform: scaleX(1.3);
+    transform-origin: left;
+    cursor: pointer;
+}
+
+.cart {
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.cart:hover {
+    color: #555;
+}
+
+/* Hlavní obrázek */
+.hero {
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    background: #111;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mřížka produktů */
+.shop-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+    background: #ffffff;
+}
+
+.product {
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.product:hover {
+    opacity: 0.7;
+}
+
+.product img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    background-color: #f4f4f4;
+    margin-bottom: 15px;
+}
+
+.product-info h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-info p {
+    font-size: 13px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Patička */
+.footer {
+    background-color: #f9f9f9;
+    padding: 80px 40px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+    margin-top: 40px;
+}
+
+.footer-content h2 {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    transform: scaleX(1.2);
+}
+
+.footer-content p {
+    font-size: 13px;
+    color: #000;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Responzivita pro mobily */
+@media (max-width: 900px) {
+    .shop-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
+        gap: 15px;
+    }
+    .hero {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 20px;
+    }
+    .shop-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer {
+        padding: 60px 20px;
+    }
+}
